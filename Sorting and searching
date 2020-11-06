@@ -1,0 +1,17 @@
+ALGORITHM sorting
+VAR
+Tab : tableau des entiers [100];
+i,j,ins : Entier;
+Début
+Lire(Tab);
+Pour i de 1à Tab.length Faire
+sor := Tab[i];
+j := i-1 ;
+Tant que (j >=0 && Tab[j] > sor ) Faire
+Tab[j+1] =Tab[j] ;
+j=j-1
+Fin Tant que
+Tab[j+1] = sor;
+Fin Pour
+Ecrire (Tab);
+Fin
