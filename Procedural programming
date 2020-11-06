@@ -1,0 +1,71 @@
+1)
+PROCEDURE dot_product(v1,v2 : ARRAY_OF INTEGER, VAR ps : INTEGER)
+VAR
+i : INTEGER;
+BEGIN
+ps :=0;
+i:=0;
+IF (v1.length <> v2.length) THEN
+Write("On ne peut pas calculer le produit scalaire");
+END_IF
+WHILE (i <v1.length ) DO
+ps := ps + v1[i]*v2[i];
+END_WHILE
+END
+
+2)
+ALGORITHM vecteurs-orthogonaux
+VAR
+v1,v2 : ARRAY_OF INTEGER [50];
+ps : INTEGER;
+BEGIN
+n1 := read_size();
+read_array(n1,v1);
+n2 := read_size();
+read_array(n2,v2);
+dot_product(v1,v2,ps);
+IF (ps = 0) THEN
+Write("V1 et V2 sont orthogonaux");
+ELSE
+Write("V1 et V2 ne sont pas orthogonaux");
+END_IF
+END
+
+3)
+
+FUNCTION dot_product(v1,v2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+i, dot : INTEGER;
+BEGIN
+ps :=0;
+i:=0;
+IF (v1.length <> v2.length) THEN
+Write("Ce n’est pas possible de calculer le produit scalaire");
+END_IF
+WHILE (i <v1.length ) DO
+ps := ps + v1[i]*v2[i];
+END_WHILE
+RETURN ps ;
+END
+
+ALGORITHM vecteurs_orthogonaux
+VAR
+v1,v2 : ARRAY_OF INTEGER [50];
+ps : INTEGER;
+BEGIN
+n1 := read_size();
+read_array(n1,v1);
+n2 := read_size();
+read_array(n2,v2);
+ps := dota_product(v1,v2);
+IF (ps = 0) THEN
+Write("V1 et V2 sont orthogonaux");
+ELSE
+Write("V1 and V2 ne sont pas orthogonaux");
+END_IF
+END
+
+
+
+
+
